@@ -25,6 +25,11 @@ addBook.addEventListener("click", e => {
     let newBook = createNewBook(title, author, pages, finished)
     myLibrary = [...myLibrary, newBook]
     displayBook()
+    
+    bookTitle.value = ""
+    bookAuthor.value = ""
+    bookPages.value = 0
+    bookFinished.checked = false
     modal.close()
 
 })

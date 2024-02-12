@@ -57,6 +57,8 @@ canvas {
     top: 0;
 
     background: white;
+
+    z-index: 3;
 }
 
 .header > * {
