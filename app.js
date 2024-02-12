@@ -7,8 +7,6 @@ const bookAuthor = document.querySelector("#author")
 const bookPages = document.querySelector("#pages")
 const bookFinished = document.querySelector("#checkbox")
 const libraryBody = document.querySelector(".library-body")
-let deleteBtns = []
-let bookId = 0
 
 let myLibrary = []
 
