@@ -22,7 +22,7 @@ addBook.addEventListener("click", e => {
     const pages = bookPages.value
     const finished = bookFinished.checked
     
-    let newBook = createNewBook(title, author, pages, finished)
+    let newBook = Book.createNewBook(title, author, pages, finished)
     myLibrary = [...myLibrary, newBook]
     displayBook()
     
@@ -38,16 +38,21 @@ closeModal.addEventListener("click", e => {
     modal.close()
 })
 
-function Book(title, author, pages, finished = false) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.finished = finished
-    this.id = myLibrary.length > 0 ? myLibrary[myLibrary.length - 1].id + 1 : 1
-}
+class Book {
+    finished = false
+    constructor(title, author, pages, finished){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.finished = finished
+        this.id = myLibrary.length > 0 ? myLibrary[myLibrary.length - 1].id + 1 : 1
+    }
 
-function createNewBook(title, author, pages, finished) {
-    return new Book(title, author, pages, finished)
+    static createNewBook(title, author, pages, finished) {
+        console.log("Successfully refactored constructor to class!")
+        return new Book(title, author, pages, finished)
+    } 
+
 }
 
 function displayBook() {
